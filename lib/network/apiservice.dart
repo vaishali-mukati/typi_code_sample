@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:typi_code_sample2/model/photomodel.dart';
 
 class ApiService{
 
@@ -14,9 +15,16 @@ class ApiService{
      return _Instance;
    }
  
-   getPhotos(){
-     final response = dio.get('/photos');
-     print('==========response$response');
+  Future<List<PhotoModel>>getPhotos() async{
+     final response = await dio.get('/photos');
+     List<PhotoModel> list = [];
+     final data = response.data;
+     if(data != null && data is List){
+        for(var element in data){
+          list.add(PhotoModel.fromjson(element));
+        }
+     }
+     return list;
    }
 }
 
