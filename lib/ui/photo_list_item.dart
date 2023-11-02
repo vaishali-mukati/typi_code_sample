@@ -13,10 +13,12 @@ class PhotoListItem extends StatelessWidget {
         height:150,
         child:CachedNetworkImage(
           imageUrl:photo.thumbnailUrl,
-          placeholder: (context,url){
-                    return const CircularProgressIndicator();
+          placeholder: (context,url) => const SizedBox(
+                      width: 24,
+                      height: 24,
+                      child:Center(child:CircularProgressIndicator(),),
 
-                   },
+                ),
                    errorWidget: (context ,url,error) =>Column(
                      children:  [
                          const Icon(Icons.error),

@@ -46,7 +46,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
 
   Text _buildError(String error) => Text(error);
 
-  Widget _buildLoading () => const CircularProgressIndicator();
+  Widget _buildLoading () => const Center(child:CircularProgressIndicator());
 
   Widget _buildList (List <PhotoModel> list){
     if(list.isEmpty) {
