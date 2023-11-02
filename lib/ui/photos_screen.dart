@@ -51,9 +51,9 @@ class _PhotoScreenState extends State<PhotoScreen> {
     }
 
       return ListView.builder(
-          itemCount: list.length,
+          itemCount: list.length > 50 ?list.length : 50,
           itemBuilder: (context,index) {
-             PhotoListItem(
+           return PhotoListItem(
               photo:list[index],
             );
           });
