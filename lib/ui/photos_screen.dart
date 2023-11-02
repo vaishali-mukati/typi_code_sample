@@ -24,6 +24,9 @@ class _PhotoScreenState extends State<PhotoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title:const Text('Photos'),
+      ),
       body: FutureBuilder(future: list,builder:(context,snapshot){
           return _handleSnapshot(snapshot);
       },),
