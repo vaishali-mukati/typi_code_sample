@@ -46,15 +46,19 @@ class _PhotoScreenState extends State<PhotoScreen> {
 
   Text _buildError(String error) => Text(error);
 
-  Widget _buildLoading () => const CircularProgressIndicator();
+  Widget _buildLoading () => const Center(child:CircularProgressIndicator());
 
   Widget _buildList (List <PhotoModel> list){
     if(list.isEmpty) {
       return _buildError('No data');
     }
 
-      return ListView.builder(
+      return ListView.separated(
           itemCount: list.length > 50 ? 50 : list.length,
+         separatorBuilder: (context , i){
+            return const SizedBox(height: 8);
+         },
+
           itemBuilder: (context,index) {
            return PhotoListItem(
               photo:list[index],
