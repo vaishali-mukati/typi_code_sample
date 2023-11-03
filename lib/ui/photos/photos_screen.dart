@@ -28,19 +28,19 @@ class _PhotoScreenState extends State<PhotoScreen> {
         title:const Text('Photos'),
       ),
       body: FutureBuilder(future: list,builder:(context,snapshot){
-          return _handleSnapshot(snapshot);
+        return _handleSnapshot(snapshot);
       },),
-    );
+      );
   }
 
- Widget _handleSnapshot(AsyncSnapshot<List<PhotoModel>> snapshot){
+  Widget _handleSnapshot(AsyncSnapshot<List<PhotoModel>> snapshot){
     if(snapshot.hasData){
-       return _buildList(snapshot.data ?? []);
+      return _buildList(snapshot.data ?? []);
     }else if(snapshot.hasError){
       return _buildError(snapshot.error.toString());
 
     }else{
-        return _buildLoading();
+      return _buildLoading();
     }
   }
 
@@ -53,12 +53,11 @@ class _PhotoScreenState extends State<PhotoScreen> {
       return _buildError('No data');
     }
 
-      return ListView.separated(
-          itemCount: list.length > 50 ? 50 : list.length,
-         separatorBuilder: (context , i){
-            return const SizedBox(height: 8);
-         },
-
+    return ListView.separated(
+        itemCount: list.length > 50 ? 50 : list.length,
+        separatorBuilder: (context , i) {
+          return const SizedBox(height: 8);
+        },
           itemBuilder: (context,index) {
            return PhotoListItem(
               photo:list[index],
