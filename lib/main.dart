@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:typi_code_sample2/network/apiservice.dart';
-import 'package:typi_code_sample2/ui/photos_screen.dart';
+import 'package:typi_code_sample2/ui/home_screen.dart';
+import 'package:typi_code_sample2/ui/photos/photos_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp>{
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:const PhotoScreen(),
+      home:const HomeScreen(),
     );
   }
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:typi_code_sample2/network/apiservice.dart';
 
-import 'package:typi_code_sample2/model/photomodel.dart';
-import 'package:typi_code_sample2/ui/photo_list_item.dart';
+import 'package:typi_code_sample2/model/photo_model.dart';
+import 'package:typi_code_sample2/ui/photos/photo_list_item.dart';
 
 class PhotoScreen extends StatefulWidget {
   const PhotoScreen({super.key});

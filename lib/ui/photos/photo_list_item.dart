@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:typi_code_sample2/model/photomodel.dart';
+import 'package:typi_code_sample2/model/photo_model.dart';
 class PhotoListItem extends StatelessWidget {
 
   const PhotoListItem({super.key,required this.photo});
