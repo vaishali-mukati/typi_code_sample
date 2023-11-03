@@ -17,3 +17,4 @@ samples, guidance on mobile development, and a full API reference.
 
 
 ![alt text](https://github.com/vaishali-mukati/typi_code_sample/blob/405fd3e35c16c9869bc71461dc53c85a23914524/screenshots/Screenshot_20231103_212031.jpg)
+![alt text](https://github.com/vaishali-mukati/typi_code_sample/blob/405fd3e35c16c9869bc71461dc53c85a23914524/screenshots/Screenshot_20231103_212038.jpg)
