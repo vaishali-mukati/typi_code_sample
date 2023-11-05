@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:typi_code_sample2/model/photo_model.dart';
 import 'package:typi_code_sample2/model/posts_model.dart';
+import 'package:typi_code_sample2/model/todos_model.dart';
 
 class ApiService {
 
@@ -39,6 +40,10 @@ class ApiService {
 
   Future<List<PostsModel>> getPosts() {
     return _fetchList<PostsModel>('/posts', PostsModel.fromJson);
+  }
+  
+  Future<List<TodosModel>> getTodos(){
+     return _fetchList('todos', TodosModel.fromJson);
   }
 
   Future<PostsModel> addPost(PostsModel post) async{

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:typi_code_sample2/ui/photos/photos_screen.dart';
 import 'package:typi_code_sample2/ui/posts/posts_screen.dart';
+import 'package:typi_code_sample2/ui/todos/todos_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,6 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int currentIndex = 0;
   List<Widget> list = [
     PostsScreen(),
+    TodosScreen(),
     PhotoScreen(),
   ];
 
@@ -25,6 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
                    BottomNavigationBarItem(icon:Icon(Icons.home_outlined),
                    label:'Home'
                    ),
+                    BottomNavigationBarItem(
+                        icon:Icon(Icons.article_outlined),
+                        label:'Todos',
+                    ),
                     BottomNavigationBarItem(
                       icon:Icon(Icons.add_a_photo),
                       label:'Photos'

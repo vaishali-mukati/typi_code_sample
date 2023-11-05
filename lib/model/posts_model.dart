@@ -2,12 +2,10 @@ import 'package:flutter/cupertino.dart';
 
 class PostsModel {
 
-
   static const _keyUserId = 'UserId';
   static const _keyId = 'Id';
   static const _keyTitle = 'title';
   static const _keyBody = 'body';
-
 
   final int userId;
   final int id;
@@ -34,6 +32,6 @@ class PostsModel {
        _keyBody: body,
        _keyUserId: userId,
 
-     };
-   }
+      };
+      }
     }
