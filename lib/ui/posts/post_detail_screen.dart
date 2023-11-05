@@ -14,13 +14,39 @@ class _PostDetailScreenState extends State<PostDetailScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
          appBar: AppBar(
-           title: Text(widget.post.title.substring(0,7)),
+           title:Text('userId: ${widget.post.userId}'),
          ),
-       body: Column(
-         children: [
-           Text(widget.post.title),
-           Text(widget.post.body),
-         ],
+       body: Padding(
+         padding: const EdgeInsets.all(8.0),
+         child:Row(
+           crossAxisAlignment: CrossAxisAlignment.start,
+           children: [
+             const Icon(
+               Icons.star,
+               size: 36,
+             ),
+                const SizedBox(
+                    width: 16
+                ),
+                 Flexible(
+                     child:Column(
+                       children:[
+                         Text(
+                           widget.post.title,
+                           style:const TextStyle(
+                           fontSize: 16,
+                               fontWeight: FontWeight.w600),
+                         ),
+                         const SizedBox(
+                             height: 16),
+                         Text(
+                             widget.post.body
+                         ),
+                       ],
+                     ),
+                 ),
+                ],
+             ),
        ),
     );
   }

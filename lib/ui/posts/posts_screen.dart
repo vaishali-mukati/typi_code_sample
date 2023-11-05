@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:typi_code_sample2/model/posts_model.dart';
 import 'package:typi_code_sample2/network/apiservice.dart';
+import 'package:typi_code_sample2/ui/posts/add_post_screen.dart';
 import 'package:typi_code_sample2/ui/posts/posts_list_item.dart';
 
 class PostsScreen extends StatefulWidget {
@@ -26,6 +27,15 @@ class _PostsScreenState extends State<PostsScreen> {
         appBar: AppBar(
           title: const Text('Posts'),
         ),
+      floatingActionButton: FloatingActionButton(
+            onPressed: (){
+              Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (ctx) => const AddPostScreen()));
+            },
+        child: const Icon(Icons.add),
+      ),
+
       body:FutureBuilder(future: list,builder:(context,snapshot){
         return _handleSnapshot(snapshot);
       },),

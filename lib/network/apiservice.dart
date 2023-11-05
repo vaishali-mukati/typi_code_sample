@@ -11,7 +11,9 @@ class ApiService {
 
   final Dio dio;
 
-  ApiService._() :dio = Dio(BaseOptions(baseUrl: _baseUrl));
+  ApiService._() :dio = Dio(BaseOptions(baseUrl: _baseUrl)){
+     dio.options.headers['Content-type'] ='application/json; charset=UTF-8';
+  }
 
  factory ApiService(){
     return _Instance;
@@ -19,13 +21,13 @@ class ApiService {
 
 
   Future<List<T>> _fetchList<T>(String path,
-      T Function(Map<String, dynamic>) fromjson) async {
+      T Function(Map<String, dynamic>) fromJson) async {
     final response = await dio.get(path);
     List<T> list = [];
     final data = response.data;
     if (data != null && data is List) {
       for (var element in data) {
-        list.add(fromjson(element));
+        list.add(fromJson(element));
       }
     }
     return list;
@@ -35,7 +37,12 @@ class ApiService {
     return _fetchList<PhotoModel>('/photos', PhotoModel.fromjson);
   }
 
-  Future<List<PostsModel>> getPosts() async {
-    return _fetchList<PostsModel>('/posts', PostsModel.fromjson);
+  Future<List<PostsModel>> getPosts() {
+    return _fetchList<PostsModel>('/posts', PostsModel.fromJson);
   }
-}
+
+  Future<PostsModel> addPost(PostsModel post) async{
+      final response =  await dio.post('/posts' ,data:post.toJson());
+      return PostsModel.fromJson(response.data);
+       }
+  }
