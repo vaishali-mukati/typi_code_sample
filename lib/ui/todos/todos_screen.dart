@@ -25,6 +25,10 @@ class _TodosScreenState extends State<TodosScreen> {
       appBar: AppBar(
         title:const Text('Todos'),
       ),
+      floatingActionButton: FloatingActionButton(
+           onPressed: (){},
+          child:const Icon(Icons.add),
+      ),
       body:FutureBuilder(future: list,builder:(context,snapshot){
         return _handleSnapshot(snapshot);
       },),
