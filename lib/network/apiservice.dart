@@ -7,7 +7,7 @@ class ApiService {
 
    static const _baseUrl = 'https://jsonplaceholder.typicode.com/';
 
- static final ApiService _Instance = ApiService._();
+ static final ApiService _instance = ApiService._();
 
 
   final Dio dio;
@@ -17,7 +17,7 @@ class ApiService {
   }
 
  factory ApiService(){
-    return _Instance;
+    return _instance;
   }
 
 
@@ -43,7 +43,7 @@ class ApiService {
   }
   
   Future<List<TodosModel>> getTodos(){
-     return _fetchList('todos', TodosModel.fromJson);
+     return _fetchList('/todos', TodosModel.fromJson);
   }
 
   Future<PostsModel> addPost(PostsModel post) async{
