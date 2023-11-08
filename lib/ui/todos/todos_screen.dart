@@ -17,6 +17,9 @@ class _TodosScreenState extends State<TodosScreen> {
   @override
   void initState() {
    list = ApiService().getTodos();
+
+   print('==============list===========$list');
+
     super.initState();
   }
   @override
